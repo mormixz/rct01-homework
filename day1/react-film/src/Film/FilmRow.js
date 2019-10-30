@@ -1,12 +1,13 @@
 import React from 'react'
-
+import FilmPoster from './FilmPoster'
 class FilmRow extends React.Component{
     render(){
         const {data} = this.props;
         const releaseDate = new Date(data.release_date);
         return(
             <div className="film-row">
-                <img src={`https://image.tmdb.org/t/p/w780/${data.poster_path}`} alt="" />
+                <FilmPoster poster_path={data.poster_path}/>
+                
                 <div className="film-summary">
                     <h1>{data.title}</h1>
                     <p>{releaseDate.getFullYear()}</p>
